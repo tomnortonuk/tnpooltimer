@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TN Pool Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="setup-screen" class="screen active">
+            <h1>TN Pool Timer Setup</h1>
+            <div class="form-group">
+                <label for="player1">Player 1 Name:</label>
+                <input type="text" id="player1" value="Player 1">
+            </div>
+            <div class="form-group">
+                <label for="player1-sound">Player 1 Alarm Sound:</label>
+                <div class="sound-selector">
+                    <select id="player1-sound">
+                        <option value="sound1">Sound 1</option>
+                        <option value="sound2">Sound 2</option>
+                        <option value="sound3">Sound 3</option>
+                        <option value="sound4">Sound 4</option>
+                        <option value="sound5">Sound 5</option>
+                    </select>
+                    <button class="btn test-sound" data-player="1">Test Sound</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="player2">Player 2 Name:</label>
+                <input type="text" id="player2" value="Player 2">
+            </div>
+            <div class="form-group">
+                <label for="player2-sound">Player 2 Alarm Sound:</label>
+                <div class="sound-selector">
+                    <select id="player2-sound">
+                        <option value="sound1">Sound 1</option>
+                        <option value="sound2">Sound 2</option>
+                        <option value="sound3">Sound 3</option>
+                        <option value="sound4">Sound 4</option>
+                        <option value="sound5">Sound 5</option>
+                    </select>
+                    <button class="btn test-sound" data-player="2">Test Sound</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="shot-time">Shot Time Limit (seconds):</label>
+                <input type="number" id="shot-time" value="45" min="10" max="120">
+            </div>
+            <button id="start-game" class="btn">Start First Shot</button>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <h1>TN Pool Timer</h1>
+            <div id="timer-display">00:00</div>
+            <div id="current-player">Current Player: <span id="player-name"></span></div>
+            <button id="next-shot" class="btn">Next Shot</button>
+            <button id="reset-game" class="btn secondary">Reset Game</button>
+        </div>
+    </div>
+
+    <div class="about-link">
+        <a href="about.html">About this app</a>
+    </div>
+
+    <audio id="sound1" src="sounds/sound1.wav"></audio>
+    <audio id="sound2" src="sounds/sound2.wav"></audio>
+    <audio id="sound3" src="sounds/sound3.wav"></audio>
+    <audio id="sound4" src="sounds/sound4.wav"></audio>
+    <audio id="sound5" src="sounds/sound5.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html> 

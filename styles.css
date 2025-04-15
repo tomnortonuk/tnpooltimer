@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #e94560;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.screen {
+    display: none;
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e94560;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #e94560;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #e94560;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+.sound-selector {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.sound-selector select {
+    flex: 1;
+    height: 46px;
+    margin-top: 0;
+}
+
+.sound-selector .test-sound {
+    width: auto;
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #e94560, #ff6b6b);
+    border: none;
+    font-weight: 500;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.sound-selector .test-sound:hover {
+    background: linear-gradient(45deg, #ff6b6b, #e94560);
+    transform: translateY(-2px);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #e94560, #ff6b6b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.btn.secondary {
+    background: linear-gradient(45deg, #2a2a4a, #3a3a5a);
+    margin-top: 15px;
+}
+
+.btn.secondary:hover {
+    background: linear-gradient(45deg, #3a3a5a, #2a2a4a);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#timer-display {
+    font-size: 4em;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+    color: #e94560;
+    text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    letter-spacing: 2px;
+}
+
+#current-player {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.about-link a {
+    color: rgba(233, 69, 96, 0.7);
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: color 0.3s ease;
+}
+
+.about-link a:hover {
+    color: #e94560;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.about-content {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 40px 20px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    #timer-display {
+        font-size: 5em;
+    }
+} 
