@@ -1,3 +1,18 @@
+// Splash screen handler
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const setupScreen = document.getElementById('setup-screen');
+    
+    // Hide splash screen after 3 seconds
+    setTimeout(() => {
+        splashScreen.classList.add('fade-out');
+        setTimeout(() => {
+            splashScreen.style.display = 'none';
+            setupScreen.classList.add('active');
+        }, 500);
+    }, 3000);
+});
+
 // Game state
 let gameState = {
     player1: 'Player 1',
