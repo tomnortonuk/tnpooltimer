@@ -68,6 +68,11 @@ function startTimer() {
         gameState.timeLeft--;
         updateTimerDisplay();
         
+        // Play pip sound for last 5 seconds
+        if (gameState.timeLeft > 0 && gameState.timeLeft <= 5) {
+            playPip();
+        }
+        
         if (gameState.timeLeft <= 0) {
             clearInterval(gameState.timer);
             playAlarm();
@@ -146,6 +151,13 @@ document.querySelectorAll('.test-sound').forEach(button => {
         playTestSound(playerNumber);
     });
 });
+
+// Add new function to play pip sound
+function playPip() {
+    const pipSound = document.getElementById('pip');
+    pipSound.currentTime = 0;
+    pipSound.play();
+}
 
 // Initialize
 loadSettings(); 
