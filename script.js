@@ -91,7 +91,7 @@ function playAlarm() {
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0;
-    }, 5000);
+    }, 7000);
 }
 
 // Play test sound
@@ -106,7 +106,7 @@ function playTestSound(playerNumber) {
     setTimeout(() => {
         audio.pause();
         audio.currentTime = 0;
-    }, 1000);
+    }, 2000);
 }
 
 // Switch to next player
